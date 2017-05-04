@@ -1,80 +1,241 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: https://res.uzhenbao.com/v3
 
 # UZHENBAO API V3
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+优真宝Android/iOS移动端数据接口
 
-## Questions Collection [/questions]
+# 文档说明
 
-### List All Questions [GET]
+本文档使用 `RESTful` 风格 API, 当前处于更新期, 在使用过程中如有错误, 及时反馈
 
-+ Response 200 (application/json)
+# 网络协议
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
+Api使用 `Https` h2协议, 默认端口443
 
-### Create a New Question [POST]
+```
+https://res.uzhenbao.com/v3
+```
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+# 版本及特性
 
-+ Request (application/json)
+API 当前版本 `3`,  新版将较之前的版本作更加规范的数据格式及返回消息, 修正前两个版本语义不当的地方
 
+# 请求动作
+
+RESTful API使用如下动词, 完成客户端与服务器间的交互操作
+
+| Method | Description |
+|---|---|
+| `GET` | 获取单个或列表资源, 正常时返回 `200`, 未找到时返回 `404` |
+| `POST` | 创建资源, 正常时返回 `201` |
+| `PUT` | 更新一个资源, 成功时返回 `200`|
+| `DELETE` | 删除资源, 成功时 `204`|
+
+
+# HTTP状态码
+
+HTTP状态码是客户端接收服务器响应状态, 根据不同的状态提示用户或处理逻辑, 在接收数据前应首先判断状态码
+
+| Code | Description |
+|---|---|
+| `200` | Success
+| `201` | Success - *资源被创建或更新 (POST)*
+| `204` | Success - *无返回内容 (DELETE)*
+| `400` | Bad Request - *请求验证不通过, 参数有误*
+| `401` | Unauthorized - *需要登录验证, 未验证的*
+| `403` | Forbidden - *访问被拒绝*
+| `404` | Not Found - *资源不存在*
+| `405` | Method Not Found - *方法不存在*
+| `409` | Conflict - *资源已存在*
+| `410` | Gone - *资源已失效, 过期*|
+| `412` | Precondition Failed - *不满足请求条件*
+| `422` | Unprocessible Entity - *验证错误*
+| `429` | Rate Limit Exceeded - *请求频繁, 稍后重试*
+| `500` | Server Error - *服务器内部错误*
+| `503` | Service Unavailable - *服务器繁忙 (30秒内重新尝试请求)*
+| `504` | Service Timeout - *请求超时 (30秒内重新尝试请求)*
+
+# 业务状态码
+
+业务状态码会在异常或注意时以`application/json`方式返回给客户端, 字段名为`code`, 通常会附带一条`message`和一条扩展`info`, `request`将返回客户端请求的具体数据，方便开发者进行调试
+
+例:
+```
+{
+  "status": 404,
+  "code": 4040801,
+  "message": "product not found",
+  "info": [
+    "product item id: 1037111 not found"
+  ],
+  "request": {
+    "url": "https://res.uzhenbao.com/v3/orders/products/preview",
+    "method": "POST",
+    "data": {
+      "items": [
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+          "amount": "1",
+          "product_id": "565",
+          "product_item_id": "1037111",
+          "car_id": "77"
+        },
+        {
+          "amount": "1",
+          "product_id": "565",
+          "product_item_id": "1038",
+          "car_id": "97"
         }
+      ],
+      "shipping_address_id": "254",
+      "is_invoice": "0"
+    }
+  }
+}
+```
 
-+ Response 201 (application/json)
+# 数据类型
 
-    + Headers
+接口只返回`Application/json`格式数据, 请不要尝试在`Headers`中使用`Accept`来声明接收的意向数据类型
 
-            Location: /questions/2
 
-    + Body
+# 验证
 
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+*注意: 以下3种验证结果为全局验证，将不再在具体的接口中描述*
+
+## 1.客户端验证
+
+为了api接口安全,需要接口进行签名验证, 每条请求需要在`Headers`中添加如下参数
+| Header | Description |
+|---|---|
+|`app-key`| `9sk82lsSlw9IKM`由系统分配, 固定, 管理平台 app栏目获取 |
+|`timestamp`| `1478333136`, unix 时间辍, 单位秒 |
+|`sign`| `60ce041f972501bf2be046fc6d7f5617f8677264`, sha1 混淆获取 |
+
+`sign` 算法: `sha1(httpMethod+apiUrl+apiVersion+timestamp+contentLength+appSecret)`, 注意顺序一致
+
+算法参数说明
+| Field | Description |
+|---|---|
+|`httpMethod`|`GET|POST|PUT|DELETE` 大写|
+|`apiUrl`|`https://api.uzhenbao.com/products` 如有`?|&`参数, 需携带|
+|`apiVersion`|`2` 当前api版本|
+|`timestamp`|`1478333136` unix 时间辍, 单位秒, 注意要与header中的`timestamp`值一致|
+|`contentLength`|`0` 请求体总长度|
+|`appSecret`|`ksi28Skxmsw01lZs391`  由系统分配, 固定, 管理平台 app栏目获取, 签名密钥, 不可暴露, 移动端应放在安全的位置,或做包混淆|
+
+验证错误会返回如下几种结果:
+
+```
+{
+  "status": 504,
+  "code": 5041,
+  "message": "请求超时, 或与服务器时间不同步",
+  "server_timestamp": 1478337307
+}
+
+```
+
+> 问题原因是客户端与服务器时间不同步导致, 返回的`server_timestamp`为服务器当前时间, 移动端应计算时差以保证时间同步,
+后再次重试请求, 如请求失败最多尝试5次, 均失败后停止请求并告知用户:稍后重试
+
+```
+{
+  "status": 401,
+  "code": 4012,
+  "message": "sign签名错误"
+}
+```
+
+> 签名错误, 请确认参数及顺序正确, 核对sha1方法是否有差异
+
+```
+{
+  "status": 401,
+  "code": 4011,
+  "message": "应用未验证, 请求不合法"
+}
+```
+
+> 按要求在`header`中写入相应的参数
+
+
+```
+{
+  "status": 409,
+  "code": 4091,
+  "message": "同资源重复请求"
+}
+```
+
+> 同一时间内避免重复提交相同内容, 间隔时间为2秒
+
+
+## 2.请求参数验证
+
+为了保证客户端输入的数据为有效数据，服务器将验证每个接口所需要的特定的参数所支持的数据类型及数据长度等信息
+
+验证错误会返回与当前请求相关的错误信息,状态码：`400`
+
+```
+{
+  "status": 400,
+  "code": 4000001,
+  "message": "params error",
+  "info": {
+    "items": [
+      "The items field is required."
+    ]
+  },
+  "request": {
+    "url": "https://dev-res.uzhenbao.com/v3/orders/products/preview",
+    "method": "POST",
+    "data": []
+  }
+}
+```
+
+
+## 3.用户身份验证
+
+需要验证用户身份地方使用`Token`机制验证用户身份, 用户请求接口中使用`Headers`将`user-id`和`access-token`提交给服务器验证
+
+例：
+
+```
+{
+    user-id: 1,
+    access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+}
+```
+
+| Header-key | Value | Description |
+|---|---|---|
+|`user-id`| `22` | 用户id |
+|`access-token`| `$2y$10$Kbz6jSCLHLkm4D5Gp67xhux` | 用户访问token |
+
+
+验证错误将会返回如下结果：
+
+```
+{
+  "status": 401,
+  "code": 4013,
+  "message": "用户身份验证错误, 请重新登录"
+}
+```
+
+
+# H5单页
+
+以下页面在合适的位置添加链接或加载至webview
+
+| Description | Url |
+|---|---|
+| 平台服务协议 | `https://m.uzhenbao.com/users/agreement` |
+| 商品售后服务协议 | `https://m.uzhenbao.com/goodsReturns/agreement` |
+| 销售者说明 | `https://m.uzhenbao.com/orderResults/agreement` |
+| 找回密码 | `https://m.uzhenbao.com/findPassword` |
+| 应用官网 | `https://app.uzhenbao.com` |
+
+
