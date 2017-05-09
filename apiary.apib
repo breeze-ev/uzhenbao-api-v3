@@ -193,16 +193,34 @@ Response 异常示例:
 
 > 同一时间内避免重复提交相同内容, 间隔时间为1秒
 
-
+```
 {
   "status": 404,
   "code": 4042502,
   "message": "app key not found",
   "data": null
 }
+```
 
 > app key 不存在，检查移动app key是否正确
 
+
+```
+{
+  {
+    "status": 400,
+    "code": 4000001,
+    "message": "params error",
+    "data": {
+      "items": [
+        "The items field is required."
+      ]
+    }
+  }
+}
+```
+
+> 检查对应接口的参数是否按要求包含的请求体中
 
 ## 2.请求参数验证
 
