@@ -132,7 +132,7 @@ Response 异常示例:
 |`timestamp`| `1478333136`, unix 时间辍, 单位秒 |
 |`sign`| `60ce041f972501bf2be046fc6d7f5617f8677264`, sha1 混淆获取 |
 
-`sign` 算法: `sha1(httpMethod+apiUrl+apiVersion+timestamp+contentLength+appSecret)`, 注意顺序一致
+`sign` 算法: `sha1(httpMethod+apiUrl+timestamp+contentLength+appSecret)`, 注意顺序一致
 
 算法参数说明
 | Field | Description |
@@ -157,13 +157,14 @@ Response 异常示例:
 ```
 
 > 问题原因是客户端与服务器时间不同步导致, 返回的`server_timestamp`为服务器当前时间, 移动端应计算时差以保证时间同步,
-后再次重试请求, 如请求失败最多尝试5次, 均失败后停止请求并告知用户:稍后重试
+后再次重试请求, 如请求失败最多尝试5次, 均失败后停止请求并告知用户: 稍后重试
 
 ```
 {
   "status": 401,
-  "code": 4012,
-  "message": "sign签名错误"
+  "code": 4012502,
+  "message": "sign unauthorized",
+  "data": null
 }
 ```
 
@@ -174,11 +175,11 @@ Response 异常示例:
   "status": 401,
   "code": 4011301,
   "message": "user unauthorized",
-  "data": null,
+  "data": null
 }
 ```
 
-> 按要求在`header`中写入相应的参数
+> 用户验证失败, token或已过期, 应执行重新登录操作
 
 
 ```
@@ -186,11 +187,21 @@ Response 异常示例:
   "status": 409,
   "code": 4090003,
   "message": "request repeat",
-  "data": null,
+  "data": null
 }
 ```
 
 > 同一时间内避免重复提交相同内容, 间隔时间为1秒
+
+
+{
+  "status": 404,
+  "code": 4042502,
+  "message": "app key not found",
+  "data": null
+}
+
+> app key 不存在，检查移动app key是否正确
 
 
 ## 2.请求参数验证
