@@ -386,7 +386,7 @@ Request 参数
 
 # group 订单
 
-## 平台商品
+## 平台商品 [/orders/product]
 
 ### 预览订单 [POST /orders/product/preview]
 
@@ -449,4 +449,59 @@ Request 参数
 
 ### 生成订单 [POST /orders/product]
 
+
+Request 参数
+
+|Name|Type|Reqruied|Value|Lenght|Description|
+|---|---|---|---|---|
+|`items`|array|required|array|N|商品数组|
+|`items.*`|object|required|object|N|对象|
+|`items.*.product_id`|int|required|2|N|商品id|
+|`items.*.product_item_id`|int|required|23|N|商品sku id|
+|`items.*.amount`|int|required|1|N|该商品购买数量|
+|`items.*.car_id`|int|optional|3|N|购物车id, 生成订单后将删除对应的购物车内商品|
+|`shipping_address_id`|int|required|12|N|用户收货地址id|
+|`is_invoice`|int|optional|1|N|`1|0` 开具发票, 1 需要, 0 不需要|
+|`coupon_id`|int|optional|2|N|优惠券id|
+|`memo`|string|optional|尽早发货|[0, 255]|备注内容|
+
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
+    + Attributes
+
+        + items (array, required)
+            + (object)
+                + product_id: 2 (required) - id of a product
+                + product_item_id: 23 (required) - id of a product sku
+                + amount: 1 (required) - number
+                + car_id: 2 (optional) - shopping car id
+            + (object)
+                + product_id: 2 (required) - id of a product
+                + product_item_id: 23 (required) - id of a product sku
+                + amount: 1 (required) - number
+                + car_id: 3 (optional) - shopping car id
+        + shipping_address_id: 4 (required) - 收货地址id
+        + is_invoice: 0 (optional, number) - 默认0 不开具发票, 1 开发票
+        + coupon_id: 1 (optional, number) - 优惠券id
+        + memo: 这是备注内容 (optional, string) - 备注内容, 最多255字
+
+
++ Response 200 (application/json)
+
++ Response 404 (application/json)
+
++ Response 404 (application/json)
+
++ Response 403 (application/json)
+
++ Response 403 (application/json)
 
