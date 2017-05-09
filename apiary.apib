@@ -315,7 +315,7 @@ Response 异常示例:
 
 Request 参数
 
-| Name |Data Type| Lenght | Value | Description |
+| Name |Data Type | Lenght | Value | Description |
 |---|---|---|---|---|
 |auto_reply_content|string|(0,255]|你好，我现在有事不在，稍后联系你|设置自动回复的消息|
 
@@ -346,3 +346,37 @@ Request 参数
 ### 关闭自动回复 [PUT /userSettings/autoReply/close]
 
 
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
+
++ Response 200 (application/json)
+
+            {
+              "user_id": 2300,
+              "is_message_auto_reply": 0,
+              "auto_reply_content": "你好我现在不在",
+              "created_at": "2017-05-09 16:03:27",
+              "updated_at": "2017-05-09 16:11:29"
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4040001,
+              "message": "not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/userSettings/autoReply",
+                "method": "GET",
+                "data": []
+              }
+            }
