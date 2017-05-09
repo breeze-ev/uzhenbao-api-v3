@@ -400,7 +400,7 @@ Request 参数
 |`items.*`|object|required||N|对象|
 |`items.*.product_id`|int|required|2|N|商品id|
 |`items.*.product_item_id`|int|required|23|N|商品sku id|
-|`items.*.amount`|int|required|1|N|该商品购买数量|
+|`items.*.amount`|int|required|1|[1,99]|该商品购买数量|
 |`items.*.car_id`|int|optional|3|N|购物车id, 生成订单后将删除对应的购物车内商品|
 |`shipping_address_id`|int|optional|12|N|用户收货地址id|
 |`is_invoice`|int|optional|1|N|`1|0` 开具发票, 1 需要, 0 不需要|
@@ -585,7 +585,7 @@ Request 参数
 |`items.*`|object|required||N|对象|
 |`items.*.product_id`|int|required|2|N|商品id|
 |`items.*.product_item_id`|int|required|23|N|商品sku id|
-|`items.*.amount`|int|required|1|N|该商品购买数量|
+|`items.*.amount`|int|required|1|[1,99]|该商品购买数量|
 |`items.*.car_id`|int|optional|3|N|购物车id, 生成订单后将删除对应的购物车内商品|
 |`shipping_address_id`|int|required|12|N|用户收货地址id|
 |`is_invoice`|int|optional|1|N|`1|0` 开具发票, 1 需要, 0 不需要|
@@ -624,11 +624,204 @@ Request 参数
 
 + Response 201 (application/json)
 
-+ Response 404 (application/json)
+            {
+              "id": 197,
+              "order_no": "17050917482623000808",
+              "status": "0",
+              "user_id": 2300,
+              "return_id": null,
+              "amount": 0,
+              "original_price": "0.04",
+              "total_price": "0.04",
+              "coupon_price": "11.00",
+              "memo": null,
+              "created_at": "2017-05-09 17:48:39",
+              "updated_at": "2017-05-09 17:48:39",
+              "deleted_at": null,
+              "cancel_id": null,
+              "cancel_description": null,
+              "pay_platform_id": null,
+              "pay_platform_trade_no": null,
+              "coupon_id": 16,
+              "coupon_group_id": 43,
+              "is_invoice": 0,
+              "invoice_type": null,
+              "invoiced": null,
+              "express_id": null,
+              "tracking_number": null,
+              "express_traces": null,
+              "express_refresh": "2017-05-09 17:48:39",
+              "dispatched_at": null,
+              "received_at": null,
+              "is_refunded": null,
+              "is_restored_stock": 0,
+              "seller_id": null,
+              "buyer_id": null,
+              "type": 0,
+              "order_state": null
+            }
 
 + Response 404 (application/json)
 
-+ Response 403 (application/json)
+            {
+              "status": 404,
+              "code": 4040201,
+              "message": "product not found",
+              "data": {
+                "product_id": "565"
+              },
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/orders/product/preview",
+                "method": "POST",
+                "data": {
+                  "items": [
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1037",
+                      "car_id": "77"
+                    },
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1038",
+                      "car_id": "97"
+                    }
+                  ],
+                  "shipping_address_id": "254",
+                  "is_invoice": "0"
+                }
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4040202,
+              "message": "product item not found",
+              "data": {
+                "product_item_id": "10371"
+              },
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/orders/product/preview",
+                "method": "POST",
+                "data": {
+                  "items": [
+                    {
+                      "amount": "1",
+                      "product_id": "564",
+                      "product_item_id": "10371",
+                      "car_id": "77"
+                    },
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1038",
+                      "car_id": "97"
+                    }
+                  ],
+                  "shipping_address_id": "254",
+                  "is_invoice": "0"
+                }
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4041303,
+              "message": "address not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/orders/product",
+                "method": "POST",
+                "data": {
+                  "items": [
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1037",
+                      "car_id": "77"
+                    },
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1038",
+                      "car_id": "97"
+                    }
+                  ],
+                  "shipping_address_id": "254555",
+                  "coupon_id": "16",
+                  "is_invoice": "0"
+                }
+              }
+            }
 
 + Response 403 (application/json)
 
+            {
+              "status": 403,
+              "code": 4033101,
+              "message": "coupon not available",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/orders/product/preview",
+                "method": "POST",
+                "data": {
+                  "items": [
+                    {
+                      "amount": "99",
+                      "product_id": "565",
+                      "product_item_id": "1037",
+                      "car_id": "77"
+                    },
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1038",
+                      "car_id": "97"
+                    }
+                  ],
+                  "shipping_address_id": "254",
+                  "is_invoice": "0",
+                  "coupon_id": "19"
+                }
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030202,
+              "message": "product item under stocks",
+              "data": {
+                "product_item_id": "1037"
+              },
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/orders/product",
+                "method": "POST",
+                "data": {
+                  "items": [
+                    {
+                      "amount": "99",
+                      "product_id": "565",
+                      "product_item_id": "1037",
+                      "car_id": "77"
+                    },
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1038",
+                      "car_id": "97"
+                    }
+                  ],
+                  "shipping_address_id": "254",
+                  "is_invoice": "0"
+                }
+              }
+            }
+
+            
