@@ -439,11 +439,102 @@ Request 参数
 
 + Response 404 (application/json)
 
+            {
+              "status": 404,
+              "code": 4040201,
+              "message": "product not found",
+              "data": {
+                "product_id": "565"
+              },
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/orders/product/preview",
+                "method": "POST",
+                "data": {
+                  "items": [
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1037",
+                      "car_id": "77"
+                    },
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1038",
+                      "car_id": "97"
+                    }
+                  ],
+                  "shipping_address_id": "254",
+                  "is_invoice": "0"
+                }
+              }
+            }
+
 + Response 404 (application/json)
 
-+ Response 403 (application/json)
+            {
+              "status": 404,
+              "code": 4040202,
+              "message": "product item not found",
+              "data": {
+                "product_item_id": "10371"
+              },
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/orders/product/preview",
+                "method": "POST",
+                "data": {
+                  "items": [
+                    {
+                      "amount": "1",
+                      "product_id": "564",
+                      "product_item_id": "10371",
+                      "car_id": "77"
+                    },
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1038",
+                      "car_id": "97"
+                    }
+                  ],
+                  "shipping_address_id": "254",
+                  "is_invoice": "0"
+                }
+              }
+            }
+
 
 + Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4033101,
+              "message": "coupon not available",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/orders/product/preview",
+                "method": "POST",
+                "data": {
+                  "items": [
+                    {
+                      "amount": "99",
+                      "product_id": "565",
+                      "product_item_id": "1037",
+                      "car_id": "77"
+                    },
+                    {
+                      "amount": "1",
+                      "product_id": "565",
+                      "product_item_id": "1038",
+                      "car_id": "97"
+                    }
+                  ],
+                  "shipping_address_id": "254",
+                  "is_invoice": "0",
+                  "coupon_id": "19"
+                }
+              }
+            }
 
 
 
@@ -495,7 +586,7 @@ Request 参数
         + memo: 这是备注内容 (optional, string) - 备注内容, 最多255字
 
 
-+ Response 200 (application/json)
++ Response 201 (application/json)
 
 + Response 404 (application/json)
 
