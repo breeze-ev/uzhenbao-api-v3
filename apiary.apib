@@ -135,13 +135,13 @@ Response 异常示例:
 `sign` 算法: `sha1(httpMethod+apiUrl+timestamp+contentLength+appSecret)`, 注意顺序一致
 
 算法参数说明
-| Name | Description |
-|---|---|
-|`httpMethod`|`GET|POST|PUT|DELETE` 大写|
-|`apiUrl`|`https://res.uzhenbao.com/v3/products` 如有`?|&`参数, 需携带|
-|`timestamp`|`1478333136` unix 时间辍, 单位秒, 注意要与header中的`timestamp`值一致|
-|`contentLength`|`0` 请求体总长度|
-|`appSecret`|`ksi28Skxmsw01lZs391`  由系统分配, 固定, 管理平台`应用`栏目获取, 签名密钥, 不可暴露, 移动端应放在安全的位置,或做包混淆|
+| Name | Type | Value | Description |
+|---|---|---|
+|`httpMethod`| string |`GET|POST|PUT|DELETE`| 大写|
+|`apiUrl`| string |`https://res.uzhenbao.com/v3/products`| 如有`?|&`参数, 需携带|
+|`timestamp`| string |`1478333136` |unix 时间辍, 单位秒, 注意要与header中的`timestamp`值一致|
+|`contentLength`| int | `0` | 请求体总长度|
+|`appSecret`| string |`ksi28Skxmsw01lZs391` | 由系统分配, 固定, 管理平台`应用`栏目获取, 签名密钥, 不可暴露, 移动端应放在安全的位置,或做包混淆|
 
 验证错误会返回如下几种结果:
 
@@ -315,9 +315,9 @@ Response 异常示例:
 
 Request 参数
 
-| Name |Data Type | Lenght | Value | Description |
+| Name | Type | Lenght | Value | Description |
 |---|---|---|---|---|
-|auto_reply_content|string|(0,255]|你好，我现在有事不在，稍后联系你|设置自动回复的消息|
+|`auto_reply_content`|string|(0,255]|你好，我现在有事不在，稍后联系你|设置自动回复的消息|
 
 + Request
 
