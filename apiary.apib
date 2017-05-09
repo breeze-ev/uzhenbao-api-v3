@@ -170,17 +170,6 @@ Response 异常示例:
 
 > 签名错误, 请确认参数及顺序正确, 核对sha1方法是否有差异
 
-```
-{
-  "status": 401,
-  "code": 4011301,
-  "message": "user unauthorized",
-  "data": null
-}
-```
-
-> 用户验证失败, token或已过期, 应执行重新登录操作
-
 
 ```
 {
@@ -205,23 +194,6 @@ Response 异常示例:
 > app key 不存在，检查移动app key是否正确
 
 
-```
-{
-  {
-    "status": 400,
-    "code": 4000001,
-    "message": "params error",
-    "data": {
-      "items": [
-        "The items field is required."
-      ]
-    }
-  }
-}
-```
-
-> 检查对应接口的参数是否按要求包含的请求体中
-
 ## 2.请求参数验证
 
 为了保证客户端输入的数据为有效数据，服务器将验证每个接口所需要的特定的参数所支持的数据类型及数据长度等信息
@@ -245,6 +217,8 @@ Response 异常示例:
   }
 }
 ```
+
+> 检查对应接口的参数是否按要求包含的请求体中
 
 
 ## 3.用户身份验证
@@ -271,10 +245,13 @@ Response 异常示例:
 ```
 {
   "status": 401,
-  "code": 4013,
-  "message": "用户身份验证错误, 请重新登录"
+  "code": 4011301,
+  "message": "user unauthorized",
+  "data": null
 }
 ```
+
+> 用户验证失败, token或已过期, 应执行重新登录操作
 
 
 # H5单页
