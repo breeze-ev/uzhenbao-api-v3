@@ -72,7 +72,7 @@ HTTP状态码是客户端接收服务器响应状态, 根据不同的状态提�
 
 Response 参数说明
 
-|Name|Data Type|Description|
+|Name|Type|Description|
 |---|---|---|
 |status|int|同http状态码|
 |code|int|业务状态码|
@@ -1170,3 +1170,198 @@ Request 参数
             }
 
 
+
+### 支付宝支付 [/trades/{tradeNo}/alipay]
+
++ Parameters
+
+    + tradeNo: 17051111521223080667 -  trade No
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
+
++ Response 200 (application/json)
+
+            {
+              "payment": "alipay",
+              "string": "alipay_sdk=lokielse%2Fomnipay-alipay&app_id=2016101802222984&biz_content=%7B%22subject%22%3A%22%5Cu4f18%5Cu771f%5Cu5b9d%5Cu8ba2%5Cu5355%5B17051111521223080667%5D%22%2C%22out_trade_no%22%3A%2217051111521223080667%22%2C%22total_amount%22%3A%220.01%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%7D&charset=UTF-8&format=JSON&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fdev-api.uzhenbao.com%2Falipay%2Fnotify&sign_type=RSA&timestamp=2017-05-11+17%3A27%3A56&version=1.0&sign=aMAVRwnTVpDKFeWo5%2BtdZG5Dz%2FXljw%2Bj963JdrEJGhssh9h1XSrWE4f%2BqdqjoFbRVsz5UaOh1Hl%2Bie2HPiG5%2Fr8EuC%2FHQNhShuozVwS1vyJh0iRHjmp%2BZ00cJqKwB27O1dQCSwJzU7FhHzOKeQJn%2FzABgj5RSQjTvWuUGBOwFe0%3D"
+            }
+
++ Response 409 (application/json)
+
+            {
+              "status": 409,
+              "code": 4099801,
+              "message": "payment existed",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/alipay",
+                "method": "GET",
+                "data": []
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030504,
+              "message": "trade closed",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/alipay",
+                "method": "GET",
+                "data": []
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4039803,
+              "message": "payment expired",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/alipay",
+                "method": "GET",
+                "data": []
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4040501,
+              "message": "trade not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/170511115212230806617/alipay",
+                "method": "GET",
+                "data": []
+              }
+            }
+
++ Response 500 (application/json)
+
+            {
+              "status": 500,
+              "code": 5000001,
+              "message": "unknown error",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/alipay",
+                "method": "GET",
+                "data": []
+              }
+            }
+
+### 微信支付 [/trades/{tradeNo}/wechat]
+
++ Parameters
+
+    + tradeNo: 17051111521223080667 -  trade No
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "payment": "wechat",
+              "data": {
+                "appid": "wxf4110050c5a73bf4",
+                "partnerid": "1414572802",
+                "prepayid": "wx20170511173425d75426626f0842712168",
+                "noncestr": "8fd42604ccd5a9de10942c06bcc9f0b0",
+                "timestamp": 1494495258,
+                "sign": "FDA41330C5726B50666C6883602DE033",
+                "packagevalue": "Sign=WXPay"
+              }
+            }
+
++ Response 409 (application/json)
+
+            {
+              "status": 409,
+              "code": 4099801,
+              "message": "payment existed",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/alipay",
+                "method": "GET",
+                "data": []
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030504,
+              "message": "trade closed",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/alipay",
+                "method": "GET",
+                "data": []
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4039803,
+              "message": "payment expired",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/alipay",
+                "method": "GET",
+                "data": []
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4040501,
+              "message": "trade not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/170511115212230806617/alipay",
+                "method": "GET",
+                "data": []
+              }
+            }
+
++ Response 500 (application/json)
+
+            {
+              "status": 500,
+              "code": 5000001,
+              "message": "unknown error",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/alipay",
+                "method": "GET",
+                "data": []
+              }
+            }
