@@ -818,3 +818,324 @@ Request 参数
               }
             }
 
+
+### 所有订单 [GET /trades]
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "total": 1,
+              "per_page": 15,
+              "current_page": 1,
+              "last_page": 1,
+              "next_page_url": null,
+              "prev_page_url": null,
+              "from": 1,
+              "to": 1,
+              "data": [
+                {
+                  "trade_no": "17051111521223080667",
+                  "user_id": 2300,
+                  "number": 2,
+                  "original_price": "0.04",
+                  "preferential_price": null,
+                  "total_price": "0.00",
+                  "type": 0,
+                  "state": 0,
+                  "coupon_id": null,
+                  "user_coupon_id": null,
+                  "is_invoice": 0,
+                  "created_at": "2017-05-11 11:52:12",
+                  "updated_at": "2017-05-11 11:52:12",
+                  "deleted_at": null,
+                  "closed_at": null,
+                  "opened_at": "2017-05-11 11:52:12",
+                  "finished_at": null,
+                  "items": [
+                    {
+                      "item_no": "1231231231",
+                      "user_id": 2300,
+                      "merchant_id": null,
+                      "seller_id": null,
+                      "buyer_id": null,
+                      "product_id": 565,
+                      "product_item_id": 1037,
+                      "procurement_id": null,
+                      "user_product_id": null,
+                      "number": 1,
+                      "unit_price": "0.02",
+                      "total_price": "0.02",
+                      "is_support_return": null,
+                      "return_expired_at": null,
+                      "is_returned": null,
+                      "returned_at": null,
+                      "is_refunded": null,
+                      "refunded_at": null,
+                      "created_at": null,
+                      "updated_at": null,
+                      "product": {
+                        "id": 565,
+                        "category_id": 1,
+                        "category_child_id": 1,
+                        "admin_id": 1,
+                        "title": "测试1元测试",
+                        "keywords": "",
+                        "description": "规则：巴拉巴拉",
+                        "price": "1.00",
+                        "reference_price": "200.00",
+                        "likes": 0,
+                        "sales": 0,
+                        "comments": 0,
+                        "views": 16,
+                        "favorites": 0,
+                        "product_no": "",
+                        "rebate": "0.00",
+                        "title_image": "http://dev-api.uzhenbao.com/libraries/images/products/20170505113138844772.jpg",
+                        "postage": "0.00",
+                        "stock": 10,
+                        "sort": 1,
+                        "type": 0,
+                        "status": 1,
+                        "created_at": "2017-05-05 11:43:40",
+                        "updated_at": "2017-05-11 11:28:34",
+                        "flash_buy_id": 0,
+                        "group_buy_id": 0,
+                        "group_buy_preferential_price": "0.00",
+                        "merchant_id": 0,
+                        "is_audited": null,
+                        "sizes": "[\"\\u6b63\\u5e38\"]",
+                        "colors": "[\"\\u767d\\u8272\"]",
+                        "brands": null,
+                        "models": null,
+                        "styles": null,
+                        "genders": null,
+                        "textures": null,
+                        "week_return": 0,
+                        "week_exchange": null,
+                        "name": "收纳盒"
+                      },
+                      "product_item": {
+                        "id": 1037,
+                        "product_id": 565,
+                        "color": "红色",
+                        "size": "xl",
+                        "price": "0.02",
+                        "image": "https://dev-api.uzhenbao.com/uploads/products/20170502093339176526.jpg",
+                        "stock": 1212,
+                        "updated_at": "2017-05-11 11:52:12",
+                        "created_at": "2017-04-18 17:39:13"
+                      },
+                      "user_product": null,
+                      "procurement": null
+                    },
+                    {
+                      "item_no": "1231231231",
+                      "user_id": 2300,
+                      "merchant_id": null,
+                      "seller_id": null,
+                      "buyer_id": null,
+                      "product_id": 565,
+                      "product_item_id": 1038,
+                      "procurement_id": null,
+                      "user_product_id": null,
+                      "number": 1,
+                      "unit_price": "0.02",
+                      "total_price": "0.02",
+                      "is_support_return": null,
+                      "return_expired_at": null,
+                      "is_returned": null,
+                      "returned_at": null,
+                      "is_refunded": null,
+                      "refunded_at": null,
+                      "created_at": null,
+                      "updated_at": null,
+                      "product": {
+                        "id": 565,
+                        "category_id": 1,
+                        "category_child_id": 1,
+                        "admin_id": 1,
+                        "title": "测试1元测试",
+                        "keywords": "",
+                        "description": "规则：巴拉巴拉",
+                        "price": "1.00",
+                        "reference_price": "200.00",
+                        "likes": 0,
+                        "sales": 0,
+                        "comments": 0,
+                        "views": 16,
+                        "favorites": 0,
+                        "product_no": "",
+                        "rebate": "0.00",
+                        "title_image": "http://dev-api.uzhenbao.com/libraries/images/products/20170505113138844772.jpg",
+                        "postage": "0.00",
+                        "stock": 10,
+                        "sort": 1,
+                        "type": 0,
+                        "status": 1,
+                        "created_at": "2017-05-05 11:43:40",
+                        "updated_at": "2017-05-11 11:28:34",
+                        "flash_buy_id": 0,
+                        "group_buy_id": 0,
+                        "group_buy_preferential_price": "0.00",
+                        "merchant_id": 0,
+                        "is_audited": null,
+                        "sizes": "[\"\\u6b63\\u5e38\"]",
+                        "colors": "[\"\\u767d\\u8272\"]",
+                        "brands": null,
+                        "models": null,
+                        "styles": null,
+                        "genders": null,
+                        "textures": null,
+                        "week_return": 0,
+                        "week_exchange": null,
+                        "name": "收纳盒"
+                      },
+                      "product_item": {
+                        "id": 1038,
+                        "product_id": 565,
+                        "color": "白色",
+                        "size": "xl",
+                        "price": "0.02",
+                        "image": "https://dev-api.uzhenbao.com/libraries/images/products/20170418173901936797.png",
+                        "stock": 1203,
+                        "updated_at": "2017-05-11 11:52:12",
+                        "created_at": "2017-04-18 17:39:13"
+                      },
+                      "user_product": null,
+                      "procurement": null
+                    }
+                  ]
+                }
+              ]
+            }
+
+
+### 查看订单 [GET /trades/{tradeNo}]
+
++ Parameters
+
+    + tradeNo: 17051111521223080667 -  trade No
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "trade_no": "17051111521223080667",
+              "user_id": 2300,
+              "number": 2,
+              "original_price": "0.04",
+              "preferential_price": null,
+              "total_price": "0.00",
+              "type": 0,
+              "state": 0,
+              "coupon_id": null,
+              "user_coupon_id": null,
+              "is_invoice": 0,
+              "created_at": "2017-05-11 11:52:12",
+              "updated_at": "2017-05-11 11:52:12",
+              "deleted_at": null,
+              "closed_at": null,
+              "opened_at": "2017-05-11 11:52:12",
+              "finished_at": null,
+              "route": null,
+              "payment": {
+                "state": 0,
+                "alipay_no": null,
+                "wechat_no": null,
+                "paid_at": null,
+                "expired_at": "2017-05-11 12:07:12",
+                "created_at": "2017-05-11 11:52:12",
+                "updated_at": "2017-05-11 11:52:12"
+              },
+              "address": {
+                "comment": null,
+                "province": "北京",
+                "city": "北京市",
+                "area": "东城区",
+                "detail": "12321321",
+                "phone": "18017695652",
+                "name": "123213",
+                "created_at": "2017-05-11 11:52:12",
+                "updated_at": "2017-05-11 11:52:12"
+              },
+              "items": [
+                {
+                  "item_no": "1231231231",
+                  "user_id": 2300,
+                  "merchant_id": null,
+                  "seller_id": null,
+                  "buyer_id": null,
+                  "product_id": 565,
+                  "product_item_id": 1037,
+                  "procurement_id": null,
+                  "user_product_id": null,
+                  "number": 1,
+                  "unit_price": "0.02",
+                  "total_price": "0.02",
+                  "is_support_return": null,
+                  "return_expired_at": null,
+                  "is_returned": null,
+                  "returned_at": null,
+                  "is_refunded": null,
+                  "refunded_at": null,
+                  "created_at": null,
+                  "updated_at": null
+                },
+                {
+                  "item_no": "1231231231",
+                  "user_id": 2300,
+                  "merchant_id": null,
+                  "seller_id": null,
+                  "buyer_id": null,
+                  "product_id": 565,
+                  "product_item_id": 1038,
+                  "procurement_id": null,
+                  "user_product_id": null,
+                  "number": 1,
+                  "unit_price": "0.02",
+                  "total_price": "0.02",
+                  "is_support_return": null,
+                  "return_expired_at": null,
+                  "is_returned": null,
+                  "returned_at": null,
+                  "is_refunded": null,
+                  "refunded_at": null,
+                  "created_at": null,
+                  "updated_at": null
+                }
+              ],
+              "comment": null
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4040001,
+              "message": "not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667",
+                "method": "GET",
+                "data": []
+              }
+            }
