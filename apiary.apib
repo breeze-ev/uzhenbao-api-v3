@@ -1835,7 +1835,21 @@ Request 参数
             {
               "status": 403,
               "code": 4030003,
-              "message": "cannot close",
+              "message": "finished, cannot close",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/close",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "dispatched, cannot close",
               "data": null,
               "request": {
                 "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/close",
