@@ -1755,6 +1755,10 @@ Request 参数
 
 ### 关闭订单 [PUT /trades/{tradeNo}/close]
 
+
+`trade.state = 0 and trade.route.state = 0` 时用户可以主动关闭订单, 已付款的订单会自动退款至原用户付款平台帐户
+
+
 + Parameters
 
     + tradeNo: 17051111521223080667 -  trade No
