@@ -1158,7 +1158,7 @@ Request 参数
 |`trade.state`|0|正常订单|
 |`trade.state`|1|已完成订单|
 |`trade.state`|-1|已关闭订单|
-|`trade.payment.state`|0|未付款|
+|`trade.payment.state`|0|待付款|
 |`trade.payment.state`|1|已付款|
 |`trade.payment.state`|-1|已过期|
 |`trade.route.state`|0|未发货|
@@ -1381,7 +1381,7 @@ Request 参数
             }
 
 
-### 查看订单 [GET /trades/{tradeNo}]
+### 订单详情 [GET /trades/{tradeNo}]
 
 + Parameters
 
@@ -1502,3 +1502,201 @@ Request 参数
             }
 
 
+
+
+### 订单路由 [GET /trades/{tradeNo}/route]
+
++ Parameters
+
+    + tradeNo: 17051111521223080667 -  trade No
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "express_id": 1,
+              "express_trade_no": "289002468043",
+              "traces": [
+                {
+                  "AcceptTime": "2017-04-06 10:46:47",
+                  "AcceptStation": "已签收(同事 ),感谢使用顺丰,期待再次为您服务",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-06 08:13:01",
+                  "AcceptStation": "正在派送途中(派件人:李永,电话:13402039737)",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-06 08:12:06",
+                  "AcceptStation": "快件交给李永，正在派送途中（联系电话：13402039737）",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-06 07:35:24",
+                  "AcceptStation": "正在派送途中,请您准备签收(派件人:解新波,电话:13611635024)",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-06 07:19:42",
+                  "AcceptStation": "快件到达 【上海黄浦南市营业点】",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-06 01:10:46",
+                  "AcceptStation": "快件在【上海浦江集散中心】已装车，准备发往 【上海黄浦南市营业点】",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-05 19:03:02",
+                  "AcceptStation": "快件到达 【上海浦江集散中心】",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-04 22:29:52",
+                  "AcceptStation": "快件在【武汉东西湖集散中心】已装车，准备发往 【上海浦江集散中心】",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-04 18:27:31",
+                  "AcceptStation": "快件到达 【武汉东西湖集散中心】",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-04 02:17:06",
+                  "AcceptStation": "快件在【武汉吴家山集散中心】已装车，准备发往 【武汉东西湖集散中心】",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-04 02:12:01",
+                  "AcceptStation": "快件到达 【武汉吴家山集散中心】",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-03 21:40:43",
+                  "AcceptStation": "快件在【武汉黄陂汉北营业部】已装车，准备发往 【武汉吴家山集散中心】",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-03 21:26:41",
+                  "AcceptStation": "顺丰速运 已收取快件",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-03 21:12:31",
+                  "AcceptStation": "您的订单己出库",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-03 21:11:55",
+                  "AcceptStation": "您的订单已经打包完毕,准备出库.",
+                  "Remark": ""
+                },
+                {
+                  "AcceptTime": "2017-04-03 20:57:37",
+                  "AcceptStation": "您的订单正准备拣货",
+                  "Remark": ""
+                }
+              ],
+              "state": 1,
+              "created_at": null,
+              "updated_at": "2017-05-11 11:11:20",
+              "dispathed_at": null,
+              "received_at": null,
+              "auto_received_at": null,
+              "express": {
+                "id": 1,
+                "name": "顺丰速运",
+                "alias": "SF"
+              }
+            }
+
+
+### 关闭订单 [PUT /trades/{tradeNo}/close]
+
++ Parameters
+
+    + tradeNo: 17051111521223080667 -  trade No
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "trade_no": "17051111521223080667",
+              "user_id": 2300,
+              "number": 2,
+              "original_price": "0.04",
+              "preferential_price": null,
+              "total_price": "0.00",
+              "type": 0,
+              "state": -1,
+              "coupon_id": null,
+              "user_coupon_id": null,
+              "is_invoice": 0,
+              "created_at": "2017-05-11 11:52:12",
+              "updated_at": "2017-05-12 15:20:17",
+              "deleted_at": null,
+              "closed_at": "2017-05-12 15:20:17",
+              "finished_at": null,
+              "route": null,
+              "payment": {
+                "state": 1,
+                "amount": "0.00",
+                "alipay_no": null,
+                "wechat_no": null,
+                "paid_at": "2017-05-11 18:48:21",
+                "expired_at": null,
+                "created_at": "2017-05-11 11:52:12",
+                "updated_at": "2017-05-11 18:48:21",
+                "is_refunded": null,
+                "refund_amount": null,
+                "refunded_at": null
+              },
+              "comment": null
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "already closed",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/close",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "cannot close",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/close",
+                "method": "PUT",
+                "data": []
+              }
+            }
