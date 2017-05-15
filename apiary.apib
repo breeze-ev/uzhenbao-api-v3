@@ -1051,6 +1051,138 @@ Request 参数
 
 # group 用户
 
+## 通知 [/userNotifications]
+
+
+## 通知列表 [GET /userNotifications]
+
+可选依据 `type` 类型进行筛选
+
+> 例: /userNotifications?type=trade
+
+|Name|Value|Description|
+|---|---|---|
+|`type`|`trade`| 订单 |
+|`type`|`post`| 话题 |
+
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "total": 11,
+              "per_page": 15,
+              "current_page": 1,
+              "last_page": 1,
+              "next_page_url": null,
+              "prev_page_url": null,
+              "from": 1,
+              "to": 11,
+              "data": [
+                {
+                  "id": 1543,
+                  "user_id": 2300,
+                  "description": "您的订单已成功支付",
+                  "is_read": 0,
+                  "notice_id": "4294967295",
+                  "notice_type": "App\\Trade",
+                  "updated_at": "2017-05-15 14:32:17",
+                  "created_at": "2017-05-15 12:59:52",
+                  "notice": null
+                },
+                {
+                  "id": 1426,
+                  "user_id": 2300,
+                  "description": "有人回复了你的主题",
+                  "is_read": 0,
+                  "notice_id": "10852",
+                  "notice_type": "App\\ForumPost",
+                  "updated_at": "2017-05-09 10:27:54",
+                  "created_at": "2017-05-09 10:27:54",
+                  "notice": {
+                    "id": 10852,
+                    "forum_id": 6,
+                    "title": "看看",
+                    "user_id": 2300,
+                    "is_useful": 0,
+                    "type": 1,
+                    "replies": 1,
+                    "hot": 0,
+                    "likes": 0,
+                    "dislikes": 0,
+                    "favorites": 0,
+                    "views": 5,
+                    "status": 0,
+                    "top": 0,
+                    "updated_at": "2017-05-09 10:28:10",
+                    "created_at": "2017-05-09 10:27:30",
+                    "deleted_at": null,
+                    "forum": {
+                      "id": 6,
+                      "name": "测试",
+                      "description": "12312321",
+                      "alias": "test",
+                      "icon": "http://dev-api.uzhenbao.com/uploads/forums/14807303613019_forums.jpg",
+                      "sort": 12,
+                      "updated_at": "2016-12-03 09:59:30",
+                      "created_at": "2016-12-03 09:59:30",
+                      "hot": 0,
+                      "removeable": 1
+                    }
+                  }
+                }
+              ]
+            }
+
+
+### 已读[GET /userNotifications/{id}]
+
++ Parameters
+
+    + id: 12 -  通知id
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 204 (application/json)
+
+
+### 消息数 [GET /userNotifications/number]
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "all": 10,
+              "post": 9,
+              "trade": 0
+            }
+
 ## 设置 [/userSettings/autoReply]
 
 ### 显示自动回复内容 [GET /userSettings/autoReply]
