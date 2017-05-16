@@ -1963,15 +1963,15 @@ Request 参数
               "comment": null
             }
 
-+ Response 403 (application/json)
++ Response 409 (application/json)
 
             {
-              "status": 403,
-              "code": 4030003,
+              "status": 409,
+              "code": 4090002,
               "message": "already closed",
               "data": null,
               "request": {
-                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/close",
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051610091000500955/close",
                 "method": "PUT",
                 "data": []
               }
@@ -2009,7 +2009,7 @@ Request 参数
 ### 订单收货 [PUT /trades/{tradeNo}/receive]
 
 
-`trade.state = 0` 时用户可以主动确认收货
+`trade.state = 0 and trade.route.state = 1` 时用户可以主动确认收货
 
 
 + Parameters
@@ -2073,15 +2073,15 @@ Request 参数
               "comment": null
             }
 
-+ Response 403 (application/json)
++ Response 409 (application/json)
 
             {
-              "status": 403,
-              "code": 4030003,
+              "status": 409,
+              "code": 4090003,
               "message": "already finished",
               "data": null,
               "request": {
-                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/close",
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051517351300500171/receive",
                 "method": "PUT",
                 "data": []
               }
@@ -2092,7 +2092,7 @@ Request 参数
             {
               "status": 403,
               "code": 4030003,
-              "message": "cannot finish",
+              "message": "closed, cannot finish",
               "data": null,
               "request": {
                 "url": "https://dev-res.uzhenbao.com/v3/trades/17051610091000500955/receive",
