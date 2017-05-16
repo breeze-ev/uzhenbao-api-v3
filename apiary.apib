@@ -2004,3 +2004,99 @@ Request 参数
                 "data": []
               }
             }
+
+
+### 订单收货 [PUT /trades/{tradeNo}/receive]
+
+
+`trade.state = 0` 时用户可以主动确认收货
+
+
++ Parameters
+
+    + tradeNo: 17051111521223080667 -  trade No
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "trade_no": "17051517351300500171",
+              "user_id": 5,
+              "number": 1,
+              "original_price": "0.01",
+              "preferential_price": null,
+              "total_price": "0.01",
+              "type": 0,
+              "state": 1,
+              "coupon_id": null,
+              "user_coupon_id": null,
+              "is_invoice": 0,
+              "created_at": "2017-05-15 17:35:13",
+              "updated_at": "2017-05-16 18:35:00",
+              "deleted_at": null,
+              "closed_at": "2017-05-15 18:43:16",
+              "finished_at": "2017-05-16 18:35:00",
+              "route": {
+                "express_id": null,
+                "express_trade_no": null,
+                "traces": null,
+                "state": 2,
+                "created_at": "2017-05-15 17:35:13",
+                "updated_at": "2017-05-16 18:35:00",
+                "dispatched_at": null,
+                "received_at": "2017-05-16 18:35:00",
+                "auto_received_at": null,
+                "expired_at": "2017-05-18 17:35:21"
+              },
+              "payment": {
+                "state": 1,
+                "amount": "0.01",
+                "alipay_no": "2017051521001004440218838949",
+                "wechat_no": null,
+                "paid_at": "2017-05-15 17:35:21",
+                "expired_at": "2017-05-15 17:50:13",
+                "created_at": "2017-05-15 17:35:13",
+                "updated_at": "2017-05-15 17:35:21",
+                "is_refunded": null,
+                "refund_amount": null,
+                "refunded_at": null
+              },
+              "comment": null
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "already finished",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051111521223080667/close",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "cannot finish",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/trades/17051610091000500955/receive",
+                "method": "PUT",
+                "data": []
+              }
+            }
