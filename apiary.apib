@@ -1064,7 +1064,6 @@ Request 参数
             }
 
 
-
 # group 用户
 
 ## 通知 [/userNotifications]
@@ -2120,3 +2119,101 @@ Request 参数
                 "data": []
               }
             }
+
+
+# Group 系统
+
+## 系统通知 [/notifications{?platform}]
+
+全体通知将下发到全体用户,包含未注册的用户, 移动端根据自己的平台设备类型, 向api请求该平台的数据
+
+
+### 通知列表 [GET]
+
++ Parameter
+
+    + platform: android (string, required) - 平台类型, android: 安卓, ios: 苹果, 请根据自己的设备类型传相应的值
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+
++ Response 200 (application/json)
+
+            {
+              "total": 1,
+              "per_page": 15,
+              "current_page": 1,
+              "last_page": 1,
+              "next_page_url": null,
+              "prev_page_url": null,
+              "from": 1,
+              "to": 1,
+              "data": [
+                {
+                  "id": 70,
+                  "title": "哈哈",
+                  "description": "测试",
+                  "remote_platform": 0,
+                  "status": 0,
+                  "url": "",
+                  "created_at": "2017-05-17 18:01:07",
+                  "updated_at": "2017-05-17 18:01:07"
+                }
+              ]
+            }
+
+
+
+### 通知详情 [GET /notifications/{id}]
+
++ Parameter
+
+    + id: 1 (number, required) - 通知id
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+
++ Response 200 (application/json)
+
+            {
+              "id": 70,
+              "title": "哈哈",
+              "description": "测试",
+              "remote_platform": 0,
+              "status": 0,
+              "url": "",
+              "created_at": "2017-05-17 18:01:07",
+              "updated_at": "2017-05-17 18:01:07",
+              "detail": {
+                "notice_id": 70,
+                "content": "<p>式样</p>",
+                "created_at": "2017-05-17 18:01:07",
+                "updated_at": "2017-05-17 18:01:07"
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4040001,
+              "message": "not found",
+              "data": null,
+              "request": {
+                "url": "http://dev-res.uzhenbao.com/v3/notifications/701",
+                "method": "GET",
+                "data": []
+              }
+            }
+
+
