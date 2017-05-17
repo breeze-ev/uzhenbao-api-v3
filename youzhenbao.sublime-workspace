@@ -1,0 +1,291 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ba",
+				"background"
+			],
+			[
+				"back",
+				"background-size"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "apiary.apib",
+			"settings":
+			{
+				"buffer_size": 66195,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 98.0,
+		"last_filter": "php",
+		"selected_items":
+		[
+			[
+				"php",
+				"Set Syntax: PHP"
+			]
+		],
+		"width": 452.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Breeze/Documents/breeze.github.io/uzhenbao-api-v3/apiary.apib",
+		"/Users/Breeze/mingshungg.com/admin/config.php",
+		"/Users/Breeze/nano.save",
+		"/Users/Breeze/Downloads/cert-2/PHP版/api_test.php",
+		"/Users/Breeze/yeli_network/youbao_php/private/wechat/pay/apiclient_key.pem",
+		"/Users/Breeze/yeli_network/youbao_php/private/wechat/pay/rootca.pem",
+		"/Users/Breeze/yeli_network/youbao_php/private/wechat/pay/apiclient_cert.pem",
+		"/Users/Breeze/yeli_network/youbao_php/private/alipay_public_key.pem",
+		"/Users/Breeze/yeli_network/youbao_php/private/alipay_private_key_pkcs8.pem",
+		"/Users/Breeze/yeli_network/youbao_php/private/alipay_private_key.pem",
+		"/Users/Breeze/Documents/breeze.github.io/uzhenbao-api/apiary.apib",
+		"/Users/Breeze/Desktop/status.php",
+		"/Users/Breeze/Downloads/Hidden.Figures.2016.720p.BRRip.XviD.AC3-RARBG/Hidden.Figures.2016.720p.BRRip.XviD.AC3-RARBG.XLSub.520C601274BBE6ECC1FD54A866E46F6EDFB7EE0A.ass",
+		"/Users/Breeze/Downloads/Hidden.Figures.2016.720p.BRRip.XviD.AC3-RARBG/Hidden.Figures.2016.720p.BRRip.XviD.AC3-RARBG.XLSub.91576ECBA5C1B0F017B7C90A777AD575A08BAF29.ass",
+		"/Users/Breeze/Downloads/users.short.txt",
+		"/Users/Breeze/yeli_network/wechat_uzhenbao/resources/assets/web/js/views/activity/list.vue",
+		"/Users/Breeze/Desktop/sidebar.html",
+		"/Users/Breeze/Desktop/users.ghost.dev.txt",
+		"/Users/Breeze/Desktop/users.ghost.txt",
+		"/Users/Breeze/Desktop/t.php",
+		"/Users/Breeze/Desktop/a.php",
+		"/Users/Breeze/Desktop/untitled.html",
+		"/private/tmp/crontab.MyLTSouVa9",
+		"/Users/Breeze/Downloads/libweibo-master/weibolist.php",
+		"/Users/Breeze/Downloads/libweibo-master/index.php",
+		"/Users/Breeze/Desktop/inspinia_admin-v2.7/Static_Full_Version/form_basic.html",
+		"/Users/Breeze/Desktop/breeze-admin/css/app.css",
+		"/Users/Breeze/Desktop/breeze-admin/Build/sass/app.css",
+		"/usr/local/etc/nginx/servers/wechat_uzhenbao.conf",
+		"/Users/Breeze/Desktop/index.html",
+		"/Users/Breeze/Desktop/a.html",
+		"/Users/Breeze/ayu.sublime-package/ayu-mirage.sublime-theme",
+		"/Users/Breeze/ayu.sublime-package/ayu-dark.sublime-theme",
+		"/Users/Breeze/Downloads/kh_tjrc.html",
+		"/Users/Breeze/Downloads/kh_tjrc.jsp",
+		"/Users/Breeze/Library/Containers/com.eltima.cloudmounter.mas/Data/.CMVolumes/uzhenbao/var/www/wechat_uzhenbao/public/web/js/app.js",
+		"/Users/Breeze/Library/Containers/com.eltima.cloudmounter.mas/Data/.CMVolumes/uzhenbao/var/www/wechat_uzhenbao/public/web/css/vendor.css"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 134.0,
+		"where_history":
+		[
+			"/Users/Breeze/.android/build-cache",
+			"api-version: 2"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"total_price",
+			"确认免费",
+			"Group 用户",
+			"25.3.0",
+			"header",
+			"Field",
+			" </",
+			"一级标题",
+			"搜索",
+			"用户商品",
+			"/users",
+			"用户",
+			"api-version: 1",
+			"app应用",
+			"app",
+			"全体通知",
+			"系统通知",
+			"发布的",
+			"api-version: 1",
+			"Group 用户",
+			"/users",
+			"用户"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"api-version: 2",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "apiary.apib",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 66195,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/API Blueprint/APIBlueprint.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 50.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 524.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "youzhenbao.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"admin",
+				"routes/admin.php"
+			],
+			[
+				"systemserv",
+				"app/Services/System/SystemService.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 304.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
