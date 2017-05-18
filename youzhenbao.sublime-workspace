@@ -19,7 +19,7 @@
 			"file": "apiary.apib",
 			"settings":
 			{
-				"buffer_size": 66195,
+				"buffer_size": 66155,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -167,15 +167,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 66195,
+						"buffer_size": 66155,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2262,
+								2262
 							]
 						],
 						"settings":
@@ -185,7 +185,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1554.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
