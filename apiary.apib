@@ -1294,6 +1294,279 @@ Request 参数
               }
             }
 
+# group 销售者
+
+## 订单 [/seller/trades]
+
+### 订单列表 [GET /seller/trades]
+
+
+可选 `status` 业务状态进行筛选
+
+> 例: /trades?status=waitPay
+
+|Name|Value|Description|
+|---|---|---|
+|`status`|`waitPay`| 待付款 |
+|`status`|`inProcess`|进行中|
+|`status`|`finished`|已完成|
+|`status`|`closed`|已关闭|
+
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "total": 2,
+              "per_page": 15,
+              "current_page": 1,
+              "last_page": 1,
+              "next_page_url": null,
+              "prev_page_url": null,
+              "from": 1,
+              "to": 2,
+              "data": [
+                {
+                  "trade_no": "17051813480023080969",
+                  "user_id": 2300,
+                  "number": 1,
+                  "original_price": "0.01",
+                  "preferential_price": "0.00",
+                  "total_price": "0.01",
+                  "postage": "0.00",
+                  "type": 1,
+                  "state": -1,
+                  "coupon_id": null,
+                  "user_coupon_id": null,
+                  "is_invoice": 0,
+                  "created_at": "2017-05-18 13:48:00",
+                  "updated_at": "2017-05-18 13:48:00",
+                  "deleted_at": null,
+                  "closed_at": "2017-05-18 14:03:02",
+                  "finished_at": null,
+                  "items": [
+                    {
+                      "item_no": "17051813480023080591",
+                      "user_id": 2300,
+                      "merchant_id": null,
+                      "seller_id": null,
+                      "buyer_id": null,
+                      "product_id": null,
+                      "product_item_id": null,
+                      "procurement_id": null,
+                      "user_product_id": 43,
+                      "number": 1,
+                      "unit_price": "0.01",
+                      "total_price": "0.01",
+                      "is_support_return": null,
+                      "return_expired_at": null,
+                      "is_returned": null,
+                      "is_refunded": null,
+                      "created_at": null,
+                      "updated_at": null,
+                      "product": null,
+                      "product_item": null,
+                      "user_product": {
+                        "id": 43,
+                        "user_id": 6,
+                        "title": "新款小米6",
+                        "keywords": null,
+                        "description": "新款小米6",
+                        "images": [
+                          "http://dev-api.uzhenbao.com/uploads/userProduct/20170425174921210915.jpg",
+                          "http://dev-api.uzhenbao.com/uploads/userProduct/20170425174921727176.jpg",
+                          "http://dev-api.uzhenbao.com/uploads/userProduct/20170425174921832034.jpg"
+                        ],
+                        "thumbs": [
+                          "http://dev-api.uzhenbao.com/uploads/userProduct/thumb_20170425174921210915.jpg",
+                          "http://dev-api.uzhenbao.com/uploads/userProduct/thumb_20170425174921727176.jpg",
+                          "http://dev-api.uzhenbao.com/uploads/userProduct/thumb_20170425174921832034.jpg"
+                        ],
+                        "price": "0.01",
+                        "original_price": "1200.00",
+                        "category_id": 4,
+                        "is_sold": 1,
+                        "is_audited": 1,
+                        "quality": 95,
+                        "delivery_day": 10,
+                        "updated_at": "2017-05-18 14:32:45",
+                        "created_at": "2017-04-25 17:49:21",
+                        "sort": 0,
+                        "audited_at": "2017-04-25 18:23:14",
+                        "postage": "5.00",
+                        "status": 1,
+                        "favorites": 0,
+                        "views": 56,
+                        "audit_state": 1,
+                        "sale_state": 1,
+                        "deleted_at": null
+                      },
+                      "procurement": null
+                    }
+                  ]
+                }
+              ]
+            }
+
+
+### 订单详情 [GET /seller/trades/tradeNo]
+
++ Parameters
+
+    + tradeNo: 17051111521223080667 -  trade No
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "trade_no": "17051814205223080546",
+              "user_id": 2300,
+              "number": 1,
+              "original_price": "0.01",
+              "preferential_price": "0.00",
+              "total_price": "5.01",
+              "postage": "5.00",
+              "type": 1,
+              "state": -1,
+              "coupon_id": null,
+              "user_coupon_id": null,
+              "is_invoice": 0,
+              "created_at": "2017-05-18 14:20:52",
+              "updated_at": "2017-05-18 14:20:52",
+              "deleted_at": null,
+              "closed_at": "2017-05-18 14:36:01",
+              "finished_at": null,
+              "route": {
+                "express_id": null,
+                "express_trade_no": null,
+                "traces": null,
+                "state": 0,
+                "created_at": "2017-05-18 14:20:52",
+                "updated_at": "2017-05-18 14:20:52",
+                "dispatched_at": null,
+                "received_at": null,
+                "auto_received_at": null,
+                "expired_at": "2017-05-25 14:20:52"
+              },
+              "payment": {
+                "state": 0,
+                "amount": null,
+                "alipay_no": null,
+                "wechat_no": null,
+                "paid_at": null,
+                "expired_at": "2017-05-18 14:35:52",
+                "created_at": "2017-05-18 14:20:52",
+                "updated_at": "2017-05-18 14:20:52",
+                "is_refunded": null,
+                "refund_amount": null,
+                "refunded_at": null
+              },
+              "address": {
+                "comment": "12312",
+                "province": "北京",
+                "city": "北京市",
+                "area": "东城区",
+                "detail": "12321321",
+                "phone": "18017695652",
+                "name": "123213",
+                "created_at": "2017-05-18 14:20:52",
+                "updated_at": "2017-05-18 14:20:52"
+              },
+              "items": [
+                {
+                  "item_no": "17051814205223080711",
+                  "user_id": 2300,
+                  "merchant_id": null,
+                  "seller_id": null,
+                  "buyer_id": null,
+                  "product_id": null,
+                  "product_item_id": null,
+                  "procurement_id": null,
+                  "user_product_id": 43,
+                  "number": 1,
+                  "unit_price": "0.01",
+                  "total_price": "0.01",
+                  "is_support_return": null,
+                  "return_expired_at": null,
+                  "is_returned": null,
+                  "is_refunded": null,
+                  "created_at": null,
+                  "updated_at": null,
+                  "product": null,
+                  "product_item": null,
+                  "user_product": {
+                    "id": 43,
+                    "user_id": 6,
+                    "title": "新款小米6",
+                    "keywords": null,
+                    "description": "新款小米6",
+                    "images": [
+                      "http://dev-api.uzhenbao.com/uploads/userProduct/20170425174921210915.jpg",
+                      "http://dev-api.uzhenbao.com/uploads/userProduct/20170425174921727176.jpg",
+                      "http://dev-api.uzhenbao.com/uploads/userProduct/20170425174921832034.jpg"
+                    ],
+                    "thumbs": [
+                      "http://dev-api.uzhenbao.com/uploads/userProduct/thumb_20170425174921210915.jpg",
+                      "http://dev-api.uzhenbao.com/uploads/userProduct/thumb_20170425174921727176.jpg",
+                      "http://dev-api.uzhenbao.com/uploads/userProduct/thumb_20170425174921832034.jpg"
+                    ],
+                    "price": "0.01",
+                    "original_price": "1200.00",
+                    "category_id": 4,
+                    "is_sold": 1,
+                    "is_audited": 1,
+                    "quality": 95,
+                    "delivery_day": 10,
+                    "updated_at": "2017-05-18 14:32:45",
+                    "created_at": "2017-04-25 17:49:21",
+                    "sort": 0,
+                    "audited_at": "2017-04-25 18:23:14",
+                    "postage": "5.00",
+                    "status": 1,
+                    "favorites": 0,
+                    "views": 56,
+                    "audit_state": 1,
+                    "sale_state": 1,
+                    "deleted_at": null
+                  },
+                  "procurement": null
+                }
+              ],
+              "comment": null
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4040001,
+              "message": "not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/seller/trades/170518142052230805461",
+                "method": "GET",
+                "data": []
+              }
+            }
+
 
 # group 用户
 
