@@ -1568,6 +1568,114 @@ Request 参数
             }
 
 
+### 发货 [PUT /seller/trades/{tradeNo}/dispatch]
+
++ Parameters
+
+    + tradeNo: 17051111521223080667 -  trade No
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
+    + Attributes
+
+        + express_id: 1 (required, number) - 快递id
+        + express_trade_no (required, string) - 运单号
+
++ Response 200 (application/json)
+
+            {
+              "trade_no": "17051814205223080546",
+              "user_id": 2300,
+              "number": 1,
+              "original_price": "0.01",
+              "preferential_price": "0.00",
+              "total_price": "5.01",
+              "postage": "5.00",
+              "type": 1,
+              "state": 0,
+              "coupon_id": null,
+              "user_coupon_id": null,
+              "is_invoice": 0,
+              "created_at": "2017-05-18 14:20:52",
+              "updated_at": "2017-05-18 14:20:52",
+              "deleted_at": null,
+              "closed_at": "2017-05-18 14:36:01",
+              "finished_at": null,
+              "route": {
+                "express_id": "1",
+                "express_trade_no": "12321321321",
+                "traces": null,
+                "state": 1,
+                "created_at": "2017-05-18 14:20:52",
+                "updated_at": "2017-05-18 16:49:59",
+                "dispatched_at": "2017-05-18 16:49:59",
+                "received_at": null,
+                "auto_received_at": "2017-05-25 16:49:59",
+                "expired_at": "2017-05-25 14:20:52"
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030504,
+              "message": "trade closed",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/seller/trades/17051814205223080546/dispatch",
+                "method": "PUT",
+                "data": {
+                  "express_id": "1",
+                  "express_trade_no": "12321321321"
+                }
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030001,
+              "message": "trade finished",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/seller/trades/17051814205223080546/dispatch",
+                "method": "PUT",
+                "data": {
+                  "express_id": "1",
+                  "express_trade_no": "12321321321"
+                }
+              }
+            }
+
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030001,
+              "message": "route received",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/seller/trades/17051814205223080546/dispatch",
+                "method": "PUT",
+                "data": {
+                  "express_id": "1",
+                  "express_trade_no": "12321321321"
+                }
+              }
+            }
+
+
 # group 用户
 
 ## 通知 [/userNotifications]
