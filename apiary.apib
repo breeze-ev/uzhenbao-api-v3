@@ -1228,20 +1228,147 @@ Request 参数
 
             {
               "trade_id": 5,
+              "user_id": 5,
               "trade_item_id": 197,
               "apply_images": null,
               "apply_content": "这是我的申请内容",
-              "updated_at": "2017-05-19 17:16:26",
-              "created_at": "2017-05-19 17:16:26",
-              "id": 11
+              "updated_at": "2017-05-19 18:31:46",
+              "created_at": "2017-05-19 18:31:46",
+              "id": 15,
+              "address": {
+                "province": "上海",
+                "city": "上海",
+                "area": "黄浦区",
+                "phone": "18018605650",
+                "detail": "人民路外滩soho",
+                "name": "张三",
+                "after_sale_id": 0,
+                "updated_at": "2017-05-19 18:31:46",
+                "created_at": "2017-05-19 18:31:46"
+              }
+            }
+
+
++ Response 403 (application/json)
+
+            {
+              "status": 404,
+              "code": 4041303,
+              "message": "address not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/afterSales",
+                "method": "POST",
+                "data": {
+                  "trade_no": "17051910461400500535",
+                  "item_no": "17051910461400500895",
+                  "apply_content": "这是我的申请内容",
+                  "type": "1",
+                  "address_id": "2252"
+                }
+              }
             }
 
 + Response 403 (application/json)
 
             {
-
+              "status": 403,
+              "code": 4030003,
+              "message": "there has one after sale",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/afterSales",
+                "method": "POST",
+                "data": {
+                  "trade_no": "17051910461400500535",
+                  "item_no": "17051910461400500895",
+                  "apply_content": "这是我的申请内容",
+                  "type": "1",
+                  "address_id": "225"
+                }
+              }
             }
 
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "trade not finished, forbidden operation",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/afterSales",
+                "method": "POST",
+                "data": {
+                  "trade_no": "17051910461400500535",
+                  "item_no": "17051910461400500895",
+                  "apply_content": "这是我的申请内容",
+                  "type": "1",
+                  "address_id": "225"
+                }
+              }
+            }
+
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "not support after sale",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/afterSales",
+                "method": "POST",
+                "data": {
+                  "trade_no": "17051910461400500535",
+                  "item_no": "17051910461400500895",
+                  "apply_content": "这是我的申请内容",
+                  "type": "1",
+                  "address_id": "225"
+                }
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "after sale expired",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/afterSales",
+                "method": "POST",
+                "data": {
+                  "trade_no": "17051910461400500535",
+                  "item_no": "17051910461400500895",
+                  "apply_content": "这是我的申请内容",
+                  "type": "1",
+                  "address_id": "225"
+                }
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "trade item returned",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/afterSales",
+                "method": "POST",
+                "data": {
+                  "trade_no": "17051910461400500535",
+                  "item_no": "17051910461400500895",
+                  "apply_content": "这是我的申请内容",
+                  "type": "1",
+                  "address_id": "225"
+                }
+              }
+            }
 
 
 ### 售后列表 [GET /afterSales]
