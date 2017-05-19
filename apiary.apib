@@ -1219,6 +1219,8 @@ Request 参数
           + (object) - 图片, multipart/form-data 
         + trade_no: 17051910461400500535 (optional, string) - 订单号
         + trade_item_no: 17051910461400500895 (optional, string) - 子订单号
+        + type: 0 (required, integer) - 0 退货, 1换货
+        + address_id: 1 (optional, integer) - type = 1 时 required
 
 
 
@@ -1504,6 +1506,20 @@ Request 参数
               "status": 409,
               "code": 4090002,
               "message": "closed existed",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/afterSales/11/cancel",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4040001,
+              "message": "not found",
               "data": null,
               "request": {
                 "url": "https://dev-res.uzhenbao.com/v3/afterSales/11/cancel",
