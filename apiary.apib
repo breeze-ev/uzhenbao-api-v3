@@ -1632,7 +1632,7 @@ Request 参数
             {
               "status": 409,
               "code": 4090002,
-              "message": "closed existed",
+              "message": "closed already",
               "data": null,
               "request": {
                 "url": "https://dev-res.uzhenbao.com/v3/afterSales/11/cancel",
@@ -3176,7 +3176,7 @@ Request 参数
             {
               "status": 409,
               "code": 4090002,
-              "message": "already closed",
+              "message": "closed already",
               "data": null,
               "request": {
                 "url": "https://dev-res.uzhenbao.com/v3/trades/17051610091000500955/close",
@@ -3287,7 +3287,7 @@ Request 参数
             {
               "status": 409,
               "code": 4090003,
-              "message": "already finished",
+              "message": "finished already",
               "data": null,
               "request": {
                 "url": "https://dev-res.uzhenbao.com/v3/trades/17051517351300500171/receive",
@@ -3682,7 +3682,7 @@ Request 参数
             {
               "status": 409,
               "code": 4090005,
-              "message": "accept existed",
+              "message": "accepted already",
               "data": null,
               "request": {
                 "url": "https://dev-res.uzhenbao.com/v3/agencies/1/accept",
@@ -3695,8 +3695,8 @@ Request 参数
 
             {
               "status": 403,
-              "code": 4030004,
-              "message": "closed",
+              "code": 4031604,
+              "message": "agency closed",
               "data": null,
               "request": {
                 "url": "https://dev-res.uzhenbao.com/v3/agencies/1/accept",
@@ -3756,6 +3756,20 @@ Request 参数
               "deleted_at": null
             }
 
++ Response 409 (application/json)
+
+            {
+              "status": 409,
+              "code": 4090006,
+              "message": "opened already",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/1/open",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
 ### 关闭 [PUT /agencies/{id}/close]
 
 + Parameter
@@ -3791,4 +3805,18 @@ Request 参数
               "closed_at": "2017-05-22 14:22:05",
               "opened_at": null,
               "deleted_at": null
+            }
+
++ Response 409 (application/json)
+
+            {
+              "status": 409,
+              "code": 4090002,
+              "message": "closed already",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/1/close",
+                "method": "PUT",
+                "data": []
+              }
             }
