@@ -3464,6 +3464,16 @@ Request 参数
 
 ## 代购 [/agencies]
 
+部分Request参数说明，可按需进行筛选
+
+| Name | Value | Required | Description |
+|---|---|---|---|
+|category_id| 1 | optional | 可筛选分类id下的数据 |
+|user_id| 1 | optional | 用户id |
+|keyword| 香奈儿包包 | optional | 可搜索商品名和地区 |
+|type| 1 | optional | 0代购, 1求购 |
+|status| opened | optional | opened 仅显示已开启的 ( closed 仅显示已关闭的 ) |
+
 ### 所有代购 [GET /agencies]
 
 + Request
