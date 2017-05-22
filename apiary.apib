@@ -3659,7 +3659,8 @@ Request 参数
 |`descripton`|string|required|mac book pro|(0,255]|详情说明|
 |`category_id`| int | required | 1 | N |分类id|
 |`type`|int|required|1|N|`0`代购, `1`求购|
-
+|`images`|array|optional||N|图片数组|
+|`images.*`|object|required|`image`|N|mutipart/form-data|
 
 
 + Request
@@ -3678,6 +3679,8 @@ Request 参数
         + product_name: mac book pro retina (required) - 代购商品名
         + category_id: 1 (required) - 分类id
         + type: 0 (required) - 代购类型: 0 代购, 1 求购
+        + images:  (array, required)
+          + (object) - `image` mutipart/form-data
 
 + Response 201 (application/json)
 
