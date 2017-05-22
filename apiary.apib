@@ -3892,38 +3892,67 @@ Request 参数
 + Response 200 (application/json)
 
             {
-              "total": 2,
-              "per_page": 15,
-              "current_page": 1,
-              "last_page": 1,
-              "next_page_url": null,
-              "prev_page_url": null,
-              "from": 1,
-              "to": 2,
-              "data": [
-                {
-                  "id": 23,
-                  "agency_id": 1,
-                  "customer_id": 2300,
-                  "buyer_id": 5,
-                  "from_user_id": 5,
-                  "content": "哈哈",
-                  "image": null,
-                  "created_at": "2017-05-22 16:23:41",
-                  "updated_at": "2017-05-22 16:23:41"
-                },
-                {
-                  "id": 22,
-                  "agency_id": 1,
-                  "customer_id": 2300,
-                  "buyer_id": 5,
-                  "from_user_id": 2300,
-                  "content": "你好",
-                  "image": null,
-                  "created_at": "2017-05-22 16:23:17",
-                  "updated_at": "2017-05-22 16:23:17"
-                }
-              ]
+              "agency": {
+                "id": 1,
+                "user_id": 2300,
+                "category_id": 1,
+                "type": 1,
+                "product_name": "macbookpro",
+                "description": "求购一台mac book pro retina 2017 13 256G",
+                "images": null,
+                "sort": 0,
+                "state": 1,
+                "created_at": "2017-05-22 14:26:29",
+                "updated_at": "2017-05-22 14:26:29",
+                "closed_at": null,
+                "opened_at": "2017-05-22 14:26:29",
+                "deleted_at": null
+              },
+              "messages": {
+                "total": 3,
+                "per_page": 15,
+                "current_page": 1,
+                "last_page": 1,
+                "next_page_url": null,
+                "prev_page_url": null,
+                "from": 1,
+                "to": 3,
+                "data": [
+                  {
+                    "id": 38,
+                    "agency_id": 1,
+                    "customer_id": 2300,
+                    "buyer_id": 5,
+                    "from_user_id": 2300,
+                    "content": null,
+                    "image": "http://dev-api.uzhenbao.com/uploads/messages/20170522180402997008.jpg",
+                    "created_at": "2017-05-22 18:04:02",
+                    "updated_at": "2017-05-22 18:04:02"
+                  },
+                  {
+                    "id": 36,
+                    "agency_id": 1,
+                    "customer_id": 2300,
+                    "buyer_id": 5,
+                    "from_user_id": 2300,
+                    "content": "你好",
+                    "image": null,
+                    "created_at": "2017-05-22 18:00:19",
+                    "updated_at": "2017-05-22 18:00:19"
+                  },
+                  {
+                    "id": 33,
+                    "agency_id": 1,
+                    "customer_id": 2300,
+                    "buyer_id": 5,
+                    "from_user_id": 5,
+                    "content": "哈哈",
+                    "image": null,
+                    "created_at": "2017-05-22 17:26:34",
+                    "updated_at": "2017-05-22 17:26:34"
+                  }
+                ]
+              }
             }
 
 
