@@ -23,16 +23,7 @@
 			"file": "apiary.apib",
 			"settings":
 			{
-				"buffer_size": 85636,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/Breeze/Desktop/test.php",
-			"settings":
-			{
-				"buffer_size": 4,
+				"buffer_size": 105171,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -74,6 +65,7 @@
 	},
 	"file_history":
 	[
+		"/Users/Breeze/Desktop/test.php",
 		"/Users/Breeze/Documents/breeze.github.io/uzhenbao-api-v3/apiary.apib",
 		"/Users/Breeze/mingshungg.com/admin/config.php",
 		"/Users/Breeze/nano.save",
@@ -130,6 +122,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"images",
 			"订单详情",
 			"total_price",
 			"确认免费",
@@ -172,7 +165,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -181,15 +174,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 85636,
+						"buffer_size": 105171,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								36470,
-								36470
+								49605,
+								49608
 							]
 						],
 						"settings":
@@ -199,35 +192,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 23316.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/Breeze/Desktop/test.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 29847.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
