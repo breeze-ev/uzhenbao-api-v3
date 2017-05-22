@@ -3622,6 +3622,16 @@ Request 参数
 
 ### 创建 [POST /agencies]
 
+
+|Name|Type|Reqruied|Value|Length|Description|
+|---|---|---|---|---|---|
+|`product_name`|string|required|mac|(0,255]|代购的商品名称|
+|`descripton`|string|required|mac book pro|(0,255]|详情说明|
+|`category_id`| int | required | 1 | N |分类id|
+|`type`|int|required|1|N|`0`代购, `1`求购|
+
+
+
 + Request
 
     + Headers
@@ -3631,6 +3641,13 @@ Request 参数
             sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
             user-id: 2300
             access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
+    + Attributes
+
+        + description: 一台2017年macbookpro retina 13 256G 港行(required) - 代购描述
+        + product_name: mac book pro retina (required) - 代购商品名
+        + category_id: 1 (required) - 分类id
+        + type: 0 (required) - 代购类型: 0 代购, 1 求购
 
 + Response 201 (application/json)
 
