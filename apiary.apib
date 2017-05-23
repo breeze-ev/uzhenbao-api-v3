@@ -4075,6 +4075,25 @@ Request 参数
               }
             }
 
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "there has one service already",
+              "data": {
+                "service_id": 20
+              },
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/2/services?target_user_id=2300",
+                "method": "POST",
+                "data": {
+                  "price": "200",
+                  "target_user_id": "2300"
+                }
+              }
+            }
+
 ### 关闭 [PUT /agencies/{agency_id}/services/{id}/close]
 
 
