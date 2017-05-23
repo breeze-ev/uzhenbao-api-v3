@@ -3663,6 +3663,8 @@ Request 参数
 |`images.*`|object|required|`image`|N|mutipart/form-data|
 
 
+
+
 + Request
 
     + Headers
@@ -3997,4 +3999,274 @@ Request 参数
               "created_at": "2017-05-22 16:23:17",
               "id": 22,
               "image": null
+            }
+
+
+## 服务 [/agency/{id}/services]
+
+### 创建 [POST /agency/{id}/services{?target_user_id}]
+
++ Parameters
+
+    + id: 1 (number, required) - 代购id
+    + target_user_id: 5 (number, required) - 目标用户id
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
+
+    + Attributes
+
+          + price: 1999 (optional, number) - 代购价格
+
+
++ Response 201 (application/json)
+
+            {
+              "price": "199",
+              "agency_id": "1",
+              "user_id": "5",
+              "title": "[代购]macbookpro",
+              "updated_at": "2017-05-23 10:20:01",
+              "created_at": "2017-05-23 10:20:01",
+              "id": 5
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4030003,
+              "message": "target user not in the agency joins",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/1/services",
+                "method": "POST",
+                "data": {
+                  "price": "199",
+                  "target_user_id": "100"
+                }
+              }
+            }
+
+### 关闭 [PUT /agency/{agency_id}/services/{id}/close]
+
+
++ Parameters
+
+    + agency_id: 1 (number, required) - 代购id
+    + id: 1 (number, required) - 服务id
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "id": 1,
+              "agency_id": 1,
+              "user_id": 1,
+              "title": "[代购]macbookpro",
+              "image": null,
+              "price": "11111.00",
+              "state": 0,
+              "created_at": "2017-05-23 09:56:38",
+              "updated_at": "2017-05-23 11:41:15",
+              "closed_at": "2017-05-23 11:41:15"
+            }
+
++ Response 409 (application/json)
+
+            {
+              "status": 409,
+              "code": 4090002,
+              "message": "closed already",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/1/services/1/close",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4041601,
+              "message": "agency not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/2/services/1/close",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4041602,
+              "message": "agency service not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/1/services/1111/close",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
+### 开启 [PUT /agency/{agency_id}/services/{id}/open]
+
+
++ Parameters
+
+    + agency_id: 1 (number, required) - 代购id
+    + id: 1 (number, required) - 服务id
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "id": 1,
+              "agency_id": 1,
+              "user_id": 1,
+              "title": "[代购]macbookpro",
+              "image": null,
+              "price": "11111.00",
+              "state": 1,
+              "created_at": "2017-05-23 09:56:38",
+              "updated_at": "2017-05-23 11:44:44",
+              "closed_at": null
+            }
+
++ Response 409 (application/json)
+
+            {
+              "status": 409,
+              "code": 4090006,
+              "message": "opened already",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/1/services/1/open",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4041601,
+              "message": "agency not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/2/services/1/close",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4041602,
+              "message": "agency service not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/1/services/1111/close",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
+### 修改价格 [PUT /agency/{agency_id}/services/{id}]
+
+
++ Parameters
+
+    + agency_id: 1 (number, required) - 代购id
+    + id: 1 (number, required) - 服务id
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
+    + Attributes
+
+          + price: 1999 (optional, number) - 代购价格
+
++ Response 200 (application/json)
+
+            {
+              "id": 1,
+              "agency_id": 1,
+              "user_id": 1,
+              "title": "[代购]macbookpro",
+              "image": null,
+              "price": "1999",
+              "state": 1,
+              "created_at": "2017-05-23 09:56:38",
+              "updated_at": "2017-05-23 11:46:27",
+              "closed_at": null
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4041601,
+              "message": "agency not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/2/services/1/close",
+                "method": "PUT",
+                "data": []
+              }
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4041602,
+              "message": "agency service not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/agencies/1/services/1111/close",
+                "method": "PUT",
+                "data": []
+              }
             }
