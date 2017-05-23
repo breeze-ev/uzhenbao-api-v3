@@ -3579,50 +3579,66 @@ Request 参数
 
             {
               "id": 1,
-              "user_id": 5,
+              "user_id": 2300,
               "category_id": 1,
-              "type": 0,
-              "product_name": "macbook pro",
-              "price": "13000.00",
-              "description": null,
-              "number": 1,
-              "images": null,
+              "type": 1,
+              "product_name": "macbookpro",
+              "description": "求购一台mac book pro retina 2017 13 256G",
+              "images": [
+                "http://dev-api.uzhenbao.com/uploads/agencies/20170523104807402842.png"
+              ],
               "sort": 0,
               "state": 1,
-              "created_at": null,
-              "updated_at": "2017-05-22 14:17:00",
+              "created_at": "2017-05-22 14:26:29",
+              "updated_at": "2017-05-22 14:26:29",
               "closed_at": null,
-              "opened_at": "2017-05-22 14:17:00",
+              "opened_at": "2017-05-22 14:26:29",
               "deleted_at": null,
               "user": {
-                "id": 5,
-                "name": "微风",
-                "created_at": "2017-03-22 14:05:20",
-                "updated_at": "2017-05-15 16:35:23",
+                "id": 2300,
+                "name": "微风2",
+                "created_at": "2017-04-01 13:44:21",
+                "updated_at": "2017-05-11 18:01:52",
                 "avatar": {
-                  "avatar": "http://dev-api.uzhenbao.com/uploads/avatars/20170322140956302773.jpg",
-                  "thumb": "http://dev-api.uzhenbao.com/uploads/avatars/thumb_20170322140956302773.jpg"
+                  "avatar": "http://wx.qlogo.cn/mmopen/DAkL0GVQ6ePWzkOVKgHKIoXl7yKia09BKMoKia8eIM5zgp8zXJHlscm19zapztRGaejVBfGHn6KwxEhyahtJP1bxCazCeZsHpu/0",
+                  "thumb": "http://wx.qlogo.cn/mmopen/DAkL0GVQ6ePWzkOVKgHKIoXl7yKia09BKMoKia8eIM5zgp8zXJHlscm19zapztRGaejVBfGHn6KwxEhyahtJP1bxCazCeZsHpu/0"
                 },
                 "summary": null,
-                "level": 1,
+                "level": 0,
                 "forum_level": 0
               },
               "joins": [
                 {
                   "id": 5,
-                  "name": "微风",
-                  "created_at": "2017-03-22 14:05:20",
-                  "updated_at": "2017-05-15 16:35:23",
-                  "avatar": {
-                    "avatar": "http://dev-api.uzhenbao.com/uploads/avatars/20170322140956302773.jpg",
-                    "thumb": "http://dev-api.uzhenbao.com/uploads/avatars/thumb_20170322140956302773.jpg"
+                  "agency_id": 1,
+                  "service_id": 1,
+                  "user_id": 5,
+                  "created_at": "2017-05-22 14:05:39",
+                  "updated_at": "2017-05-22 14:05:39",
+                  "user": {
+                    "id": 5,
+                    "name": "微风",
+                    "created_at": "2017-03-22 14:05:20",
+                    "updated_at": "2017-05-15 16:35:23",
+                    "avatar": {
+                      "avatar": "http://dev-api.uzhenbao.com/uploads/avatars/20170322140956302773.jpg",
+                      "thumb": "http://dev-api.uzhenbao.com/uploads/avatars/thumb_20170322140956302773.jpg"
+                    },
+                    "summary": null,
+                    "level": 1,
+                    "forum_level": 0
                   },
-                  "summary": null,
-                  "level": 1,
-                  "forum_level": 0,
-                  "pivot": {
+                  "service": {
+                    "id": 1,
                     "agency_id": 1,
-                    "user_id": 5
+                    "user_id": 1,
+                    "title": "[代购]macbookpro",
+                    "image": null,
+                    "price": "11111.00",
+                    "state": 1,
+                    "created_at": "2017-05-23 09:56:38",
+                    "updated_at": "2017-05-23 11:46:27",
+                    "closed_at": null
                   }
                 }
               ],
@@ -3701,8 +3717,7 @@ Request 参数
               }
 
 
-
-### 接单/下单 [GET /agencies/{id}/accept]
+### 参与 [GET /agencies/{id}/join]
 
 + Parameters
 
@@ -3733,8 +3748,8 @@ Request 参数
 
             {
               "status": 409,
-              "code": 4090005,
-              "message": "accepted already",
+              "code": 4090007,
+              "message": "joined already",
               "data": null,
               "request": {
                 "url": "https://dev-res.uzhenbao.com/v3/agencies/1/accept",
