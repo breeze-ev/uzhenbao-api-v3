@@ -23,7 +23,7 @@
 			"file": "apiary.apib",
 			"settings":
 			{
-				"buffer_size": 105171,
+				"buffer_size": 135084,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -122,6 +122,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"trades",
+			"trade_item_no",
+			"Parameter",
+			"finished",
+			"closed existed",
 			"images",
 			"订单详情",
 			"total_price",
@@ -174,15 +179,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 105171,
+						"buffer_size": 135084,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								49605,
-								49608
+								119447,
+								119447
 							]
 						],
 						"settings":
@@ -192,7 +197,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 29847.0,
+						"translation.y": 80293.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

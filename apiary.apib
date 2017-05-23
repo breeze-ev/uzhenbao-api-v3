@@ -3349,6 +3349,74 @@ Request 参数
             }
 
 
+## 发布的 [/releases]
+
+### 代购 [GET /agencies/release]
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 22
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
++ Response 200 (application/json)
+
+            {
+              "total": 1,
+              "per_page": 15,
+              "current_page": 1,
+              "last_page": 1,
+              "next_page_url": null,
+              "prev_page_url": null,
+              "from": 1,
+              "to": 1,
+              "data": [
+                {
+                  "id": 2,
+                  "user_id": 5,
+                  "category_id": 1,
+                  "type": 0,
+                  "title": "macbookpro",
+                  "description": "代购mac book pro retina 2017 13 256G",
+                  "images": [
+                    "http://dev-api.uzhenbao.com/uploads/agencies/20170523104807402842.png"
+                  ],
+                  "sort": 0,
+                  "state": 1,
+                  "created_at": "2017-05-22 14:26:29",
+                  "updated_at": "2017-05-22 14:26:29",
+                  "closed_at": null,
+                  "opened_at": "2017-05-22 14:26:29",
+                  "deleted_at": null,
+                  "user": {
+                    "id": 5,
+                    "name": "微风",
+                    "created_at": "2017-03-22 14:05:20",
+                    "updated_at": "2017-05-15 16:35:23",
+                    "avatar": {
+                      "avatar": "http://dev-api.uzhenbao.com/uploads/avatars/20170322140956302773.jpg",
+                      "thumb": "http://dev-api.uzhenbao.com/uploads/avatars/thumb_20170322140956302773.jpg"
+                    },
+                    "summary": null,
+                    "level": 1,
+                    "forum_level": 0
+                  },
+                  "category": {
+                    "id": 1,
+                    "name": "欧美",
+                    "sort": 3,
+                    "created_at": null,
+                    "updated_at": null
+                  }
+                }
+              ]
+            }
+
+
 # Group 系统
 
 ## 系统通知 [/notifications{?platform}]
