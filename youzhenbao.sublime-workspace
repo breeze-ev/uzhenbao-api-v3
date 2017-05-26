@@ -23,7 +23,7 @@
 			"file": "apiary.apib",
 			"settings":
 			{
-				"buffer_size": 135084,
+				"buffer_size": 137252,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -65,6 +65,7 @@
 	},
 	"file_history":
 	[
+		"/Users/Breeze/Desktop/t.html",
 		"/Users/Breeze/Desktop/test.php",
 		"/Users/Breeze/Documents/breeze.github.io/uzhenbao-api-v3/apiary.apib",
 		"/Users/Breeze/mingshungg.com/admin/config.php",
@@ -106,7 +107,7 @@
 	],
 	"find":
 	{
-		"height": 54.0
+		"height": 70.0
 	},
 	"find_in_files":
 	{
@@ -122,6 +123,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			");\n",
+			"a",
+			"购买",
 			"trades",
 			"trade_item_no",
 			"Parameter",
@@ -179,15 +183,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 135084,
+						"buffer_size": 137252,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								119447,
-								119447
+								4553,
+								4553
 							]
 						],
 						"settings":
@@ -197,7 +201,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 80293.0,
+						"translation.y": 4546.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
