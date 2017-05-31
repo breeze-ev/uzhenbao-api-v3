@@ -1675,6 +1675,74 @@ Request 参数
               }
             }
 
+### 货物退回 [PUT /afterSales/{id}/route]
+
++ Parameters
+
+    + id: 30 -  售后id
+
++ Request
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux
+
+    + Attributes
+
+        + express_id: 1 (required, number) - 快递id
+        + express_trade_no: 819283121 (required, string) - 快递运单号
+
+
++ Response 200 (application/json)
+
+            {
+              "after_sale_id": 30,
+              "express_id": "1",
+              "express_trade_no": "1212312313",
+              "traces": null,
+              "created_at": "2017-05-31 15:15:16",
+              "updated_at": "2017-05-31 15:15:16"
+            }
+
++ Response 404 (application/json)
+
+            {
+              "status": 404,
+              "code": 4040001,
+              "message": "not found",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/afterSales/10/route",
+                "method": "PUT",
+                "data": {
+                  "express_id": "1",
+                  "express_trade_no": "1212312313"
+                }
+              }
+            }
+
++ Response 403 (application/json)
+
+            {
+              "status": 403,
+              "code": 4039601,
+              "message": "after sale not available",
+              "data": null,
+              "request": {
+                "url": "https://dev-res.uzhenbao.com/v3/afterSales/30/route",
+                "method": "PUT",
+                "data": {
+                  "express_id": "1",
+                  "express_trade_no": "1212312313"
+                }
+              }
+            } 
+
+
 # group 二手商品
 
 ## 购买 [/trades]
@@ -2305,7 +2373,7 @@ Response 部分字段说明
 | bankcard_contacts | 张三 | 持卡人姓名 |
 | bankcard_number | 122982829282829289 | 银行卡卡号 |
 | way | 0 | 0: 普通结算, 1: 快速结算 |
-| type | 0 | 0: 用户商品, 1: 代购商品 |
+| trade_type | null | null: 所有, 1 : 用户商品, 4: 代购 |
 
 
 ### 列表 [GET /seller/results]
