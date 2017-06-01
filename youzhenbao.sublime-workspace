@@ -23,7 +23,7 @@
 			"file": "apiary.apib",
 			"settings":
 			{
-				"buffer_size": 145377,
+				"buffer_size": 147101,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -123,6 +123,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"售后",
 			"申请快速结算",
 			"申请",
 			"结算单",
@@ -189,15 +190,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 145377,
+						"buffer_size": 147101,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								70208,
-								70208
+								50158,
+								50158
 							]
 						],
 						"settings":
@@ -207,7 +208,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 42370.0,
+						"translation.y": 31433.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
