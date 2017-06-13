@@ -4928,3 +4928,67 @@ Request 参数
                 }
               }
             }
+
+
+# Group 文件
+
+## 图片 [/images]
+
+请求参数
+
+| Name | Value | Type | option | Description |
+|---|---|---|---|
+| file | ... | blob | required | 文件碎片 |
+| file_name | abc.png | `string` | required | 文件原始名 有扩展名应包含扩展名 |
+| blob_number | 1 | `number` | required | 当前文件碎片数字 |
+| blob_total_number | 10 | `number` | required | 文件碎片总长度 |
+| folder | product |  `string` | optional | 文件分类路径 |
+
+
+文件分类路由约束
+
+|Name|Value|Description|
+|---|---|---|
+|folder|`product`|商品分类|
+|folder|`avatar`|头像分类|
+|folder|`agency`|代购|
+|folder|`post`|主题|
+|folder|`userProduct`|用户商品|
+
+*注： 其它业务视增加而定*
+
+
+### 上传 [POST /images]
+
++ Request (application/json)
+
+    + Headers
+
+            timestamp: 1478840722
+            app-key: 92lsk20ks
+            sign: 9cf1587dac6bef69d34eaaec467689a7ffe2a5d5
+            user-id: 2300
+            access-token: $2y$10$Kbz6jSCLHLkm4D5Gp67xhux 
+
+    + Attributes
+
+        + file: (object) - 文件
+        + file_name: 4 (required, string) - 文件名
+        + blob_number: 1 (required, string) - 当前文件碎片数字
+        + blob_total_number: 1 (required, string) - 文件碎片总长度
+        + folder: product (required, string) - 文件分类路径
+
++ Response 204 (application/json)
+
++ Response 201 (application/json)
+
+            {
+                "url": "https://dev-res.uzhenbao.com/libraries/images/20170613151041244589.png",
+                "path": "/libraries/images/20170613151041244589.png",
+                "extension": "png",
+                "tag": 'product',
+                "bytes": 183802,
+                "updated_at": "2017-06-13 15:10:41",
+                "created_at": "2017-06-13 15:10:41",
+                "id": 55
+            }
